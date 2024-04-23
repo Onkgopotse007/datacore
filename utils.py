@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 
+
 def get_db_handle(host=None, port=None, db_name, username, password):
     """ Creates a db client to interact with the specified database.
         If host and port not specified uses defaults to connect to client.

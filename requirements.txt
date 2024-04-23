@@ -1,0 +1,6 @@
+Django
+djongo
+pymongo==3.12.3
+dnspython
+pytz
+git+https://github.com/botswana-harvard/edc-constants.git@develop#egg=edc_constants
