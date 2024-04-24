@@ -1,14 +1,12 @@
 from django.db import models
+from .model_mixins.record_id_model_mixin import RecordIDModelMixin
+from .model_mixins.complete_field_mixin import CompleteFieldMixin
 from ..choices import (YES_NO,SITES,YES_NO_UNK,CORD_INSERT,)
                        
 
 # Create your models here.
 
-class TsepamoOne (models.Model):
-    record_id = models.PositiveIntegerField(
-    verbose_name="Record ID (site code, RA number, 5 DIGIT number)e.g. 100100001Site Codes:Princess Marina=10Nyangabwge=20Molepolole=30Maun=40Ghanzi=50Selebi Phikwe=60Serowe=70Mahalapye=80RA Number:OM=01GL=02DS=03 EM=04CD=05RM=06PM=07KF=08TM=09GM=11MO=12MD=13RZ=14GKM=15JM=16RS=17SL=18SDP=19KP=20DJ=21JL=22MT=23SM=24",
-    blank=True, null=True,
-    help_text="", )
+class TsepamoOne (RecordIDModelMixin,CompleteFieldMixin,models.Model):
 
     site = models.CharField(
     verbose_name="Delivery Site",
@@ -5003,16 +5001,6 @@ class TsepamoOne (models.Model):
     blank=True, null=True,
     help_text="", )
 
-    tsepamo_complete = models.CharField(
-        verbose_name="Complete?",
-        blank=True,
-        null=True,
-        help_text="",
-        choices=(('0','Incomplete'),
-                 ('1','Unverified'),
-                 ('2','Complete')),
-        max_length=1
-    )
 
     class Meta:
             app_label = 'tsepamo'
