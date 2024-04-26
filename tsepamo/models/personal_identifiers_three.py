@@ -1,9 +1,9 @@
 from django.db import models
+from .model_mixins.complete_field_mixin import CompleteFieldMixin
+from .model_mixins.record_id_model_mixin import RecordIDModelMixin
 
-from .record_id_model_mixin import RecordIDModelMixin
 
-
-class PersonalIdentifiersThree(RecordIDModelMixin, models.Model):
+class PersonalIdentifiersThree(RecordIDModelMixin,CompleteFieldMixin, models.Model):
 
     hivneg_pi = models.CharField(
         verbose_name="Is this woman HIV-positive?",
