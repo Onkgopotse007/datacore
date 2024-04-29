@@ -7,3 +7,5 @@ from .personal_identifiers_two import PersonalIdentifiersTwo
 from .switcher_ipms_two import SwitcherIpmsTwo
 from .ipms_two import IpmsTwo
 from .tsepamo_two import TsepamoTwo
+from .tsepamo_one import TsepamoOne
+from .outcomes_one import OutcomesOne

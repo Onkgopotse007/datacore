@@ -1,9 +1,9 @@
 from django.db import models
+from .model_mixins.complete_field_mixin import CompleteFieldMixin
+from .model_mixins.record_id_model_mixin import RecordIDModelMixin
 
-from .record_id_model_mixin import RecordIDModelMixin
 
-
-class TsepamoThree(RecordIDModelMixin, models.Model):
+class TsepamoThree(RecordIDModelMixin,CompleteFieldMixin, models.Model):
 
     site = models.CharField(
         verbose_name="Delivery Site",

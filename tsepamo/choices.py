@@ -1,4 +1,5 @@
-
+YES_NO = (('1','Yes'),
+            ('0','No'))
 SITES = (
     ('1', 'PMH'),
     ('2', 'Nyangabgwe'),
@@ -20,7 +21,12 @@ SITES = (
     ('18', 'Letlhakane Primary Hospital'),
 )
 
-YES_NO = (
-    ('1', 'Yes'),
-    ('0', 'No'),
+
+
+YES_NO_UNK= (
+    ('1', 'YES'),
+    ('0', 'NO'),
+    ('2', 'Unknown'),
 )
+CORD_INSERT= (('1', 'disk'), ( '2', 'membrane'), ( '3', 'unknown'))
+
